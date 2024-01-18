@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Webpage</title>
+    <style>
+        /* Hide the form initially */
+        #formSection {
+            display: block;
+        }
+
+        #responseSection {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="formSection">
+        <h1>SMB AI TOOL</h1>
+
+        <!-- Input field for prompt -->
+        <label for="prompt">Prompt:</label>
+        <input type="text" id="prompt" name="prompt" placeholder="Enter your prompt">
+
+        <br>
+
+        <!-- File attachment -->
+        <label for="file">Attach File:</label>
+        <input type="file" id="file" name="file">
+
+        <br>
+
+        <!-- Button to submit the form (you can customize the action attribute accordingly) -->
+        <button onclick="submitForm()">Submit</button>
+    </div>
+
+    <div id="responseSection">
+        <h1>Response Screen</h1>
+
+        <!-- Display submitted prompt -->
+        <p><strong>Submitted Prompt:</strong> <span id="displayedPrompt"></span></p>
+
+        <!-- Response text box -->
+        <label for="response">Response:</label>
+        <textarea id="response" name="response" rows="4" placeholder="Displaying your response"></textarea>
+    </div>
+
+    <script>
+        function submitForm() {
+            // Get the input values
+            var promptValue = document.getElementById("prompt").value;
+
+            // Display the submitted prompt on the response screen
+            document.getElementById("displayedPrompt").innerText = promptValue;
+
+            // Hide the form section and show the response section
+            document.getElementById("formSection").style.display = "none";
+            document.getElementById("responseSection").style.display = "block";
+        }
+    </script>
+</body>
+</html>
